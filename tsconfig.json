@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "outDir": "dist/src",
+    "rootDir": "src",
+    "strict": false,
+    "lib": ["es2016","dom","esnext"],
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "noImplicitAny": false,
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "baseUrl": "."
+  },
+  "plugins": [
+    { "transform": "ts-transform-paths" }
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2020
+  },
+  "include": ["./src", ],
+  "exclude": ["node_modules"]
+}
