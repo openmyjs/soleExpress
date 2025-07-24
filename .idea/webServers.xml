@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="078a73ac-f14e-4e24-bb14-adbbdc751de0" name="openmyjs">
+        <fileTransfer accessType="SFTP" host="8.138.133.14" port="22" sshConfigId="fb866646-72af-4925-943a-84996c3e2fbc" sshConfig="root@8.138.133.14:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
