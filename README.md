@@ -1,4 +1,4 @@
-express+mongoose+typescript+cors+limiter+JWT+morgan+errorHandler+logger
+express+mongoose+typescript+cors+limiter+JWT+morgan+errorHandler+logger+eslint+prettier
 
 # Pure backend development architecture
 
