@@ -1,12 +1,12 @@
-const map: Map<keyof KeyType, ValueType[keyof KeyType]> = new Map()
+const map: Map<keyof StoresKey, StoresValue[keyof StoresKey]> = new Map()
 
-const protectedKeys: Set<keyof KeyType> = new Set() // 存储受保护的键
+const protectedKeys: Set<keyof StoresKey> = new Set() // 存储受保护的键
 
-export interface KeyType {
+export interface StoresKey {
   config: string
 }
 
-export interface ValueType {
+export interface StoresValue {
   config: {
     /**  是否CPU集群配置 */
     cluster: boolean
@@ -37,7 +37,7 @@ export interface ValueType {
     /** 数据库配置 */
     db: {
       mongo: {
-        uri: string
+        url: string
         options: any
       }
     }
@@ -46,26 +46,26 @@ export interface ValueType {
   }
 }
 
-interface Stores {
+export interface Stores {
   /**
    * set
    * @param  key 键
    * @param  value 值
    * @param protect en:Whether to protect, to prevent overwriting the protected value zh:是否保护,防止覆盖需要保护的值
    * */
-  set<K extends keyof KeyType>(key: K, value: ValueType[K], protect?: boolean): boolean
+  set<K extends keyof StoresKey>(key: K, value: StoresValue[K], protect?: boolean): boolean
 
   /**
    * get
    * @param  key 键
    * */
-  get<K extends keyof KeyType>(key: K): ValueType[K] | undefined
+  get<K extends keyof StoresKey>(key: K): StoresValue[K] | undefined
 
   /**
    * delete
    * @param  key 键
    * */
-  del<K extends keyof KeyType>(key: K): boolean
+  del<K extends keyof StoresKey>(key: K): boolean
 }
 
 export const stores: Stores = {
