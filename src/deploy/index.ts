@@ -2,13 +2,13 @@ import fse from 'fs-extra'
 
 import { type Express } from 'express'
 
-import { stores } from '@/stores'
+import { stores, StoresKey } from '@/stores'
 
 import hjson from 'hjson'
 
 import { isCluster } from '@/utils/cluster'
 
-export default (app: Express) => {
+export default (app: Express): Promise<StoresKey['config']> => {
   return new Promise((resolve, reject) => {
     try {
       const env: 'development' | 'production' = app.get('env')
@@ -22,8 +22,7 @@ export default (app: Express) => {
 
       const tohjson = hjson.parse(config)
 
-      // console.log('tohjson', tohjson)
-      stores.set('config', tohjson)
+      stores.set('config', tohjson, true)
 
       isCluster(tohjson.cluster, () => {
         resolve(tohjson)
