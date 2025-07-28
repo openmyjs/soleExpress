@@ -5,6 +5,19 @@
   "license": "MIT",
   "description": "Based on the TypeScript-based Express framework",
   "homepage": "https://www.openmyjs.com/soleExpress",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/openmyjs/soleExpress.git"
+  },
+  "keywords": [
+    "express",
+    "mongoose",
+    "express-jwt",
+    "express-rate-limit",
+    "soleExpress",
+    "openmyjs",
+    "cors"
+  ],
   "scripts": {
     "dev": "npx nodemon --exec  tsx src/app.ts",
     "start": "cross-env NODE_ENV=production node src/app.js",
